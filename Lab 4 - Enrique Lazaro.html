@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4</title>
+        <link rel="stylesheet" href="Lab 4 Enrique.css">
+    </head>
+    <body id = "body">
+        <h1>INST377 - Lab 4</h1>
+
+        <div class = "main-container">
+            <div class = "section">
+                <form name = "alertForm" onsubmit = "return alertMe()">
+                    <label for="alert">Name:</label>
+                    <input type="text" id="alert" required>
+                    <input type="submit" value="Alert Me!">
+                </form>
+            </div>
+
+            <div class = "section">
+                <button onclick="changeColor()">CHANGE THE COLOR</button>
+            </div>
+        </div>
+        
+        <div class = "main-container">
+            <div class = "section">
+                <form name = "texForm" onsubmit = "return validateText()">
+                    <label for="validate">Text Test</label>
+                    <input type="text" id="validate">
+                    <input type="submit" value="Validate Text">
+                </form>
+            </div>
+            
+            <div class = "section">
+                <button onclick="addText()">Add Text</button>
+            </div>
+        </div>
+
+        <script type = "text/javascript">
+            function alertMe() {
+                console.log("Validating user input:", document.alertForm.alert.value)
+                alert("Hello " + document.alertForm.alert.value + "!");
+            }
+
+            function changeColor() {
+                if(document.getElementById("body").style.backgroundColor == "seagreen") {
+                    document.getElementById("body").style.backgroundColor = "salmon";
+                } else {
+                    document.getElementById("body").style.backgroundColor = "seagreen";
+                }
+            }
+
+            function validateText() {
+                const validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if(validation.test(document.getElementById("validate").value)) {
+                    alert("How about..... nah:(");
+                }
+            }
+
+            function addText() {
+                const header = document.querySelector("h1");
+                if(!header.textContent.includes(" - Adding Text")) {
+                    header.textContent += " - Adding Text";
+                }
+            }
+            
+        </script>
+        
+
+    </body>
+
+</html>
