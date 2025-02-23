@@ -1,0 +1,22 @@
+body {
+    background-color: salmon;
+}
+
+.main-container {
+    display: flex;
+    margin: 15px;
+    justify-content: center;
+
+    
+}
+
+.section {
+    background-color: dimgray;
+    padding: 15px;
+    margin: 15px;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid white;
+    color: white;
+}
